@@ -149,7 +149,7 @@ $(jq -r '.collection_info.authors[]? | "  - " + .' MANIFEST.json)
 
 ### OPTIONAL but strongly recommended
 # A short summary description of the collection
-description: $(jq -r '.collection_info.description // empty' MANIFEST.json)1
+description: $(jq -r '.collection_info.description // empty' MANIFEST.json)
 
 # Either a single license or a list of licenses for content inside of a collection. Ansible Galaxy currently only
 # accepts L(SPDX,https://spdx.org/licenses/) licenses. This key is mutually exclusive with 'license_file'
