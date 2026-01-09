@@ -58,8 +58,8 @@ sudo yum install jq tar
 ```
 
 The script will:
-- Extract the tar.gz file to a directory next to the archive
-- Find the extracted collection directory
+- Extract the tar.gz file to a directory next to the archive (using the tar.gz filename without the `.tar.gz` extension)
+- The `MANIFEST.json` file will be directly in the extracted directory
 - Reconstruct `galaxy.yml` from `MANIFEST.json`
 - Remove build artifacts
 
@@ -92,12 +92,14 @@ The script reconstructs the following fields in `galaxy.yml` from `MANIFEST.json
 - `authors` (array)
 - `tags` (array)
 - `license` (array)
+- `license_file` (path to license file, outputs `''` if empty)
+- `tags` (array)
+- `dependencies` (JSON format)
 - `repository`
 - `documentation`
 - `homepage`
 - `issues`
 - `build_ignore` (array)
-- `dependencies` (JSON format)
 
 ## Output
 
@@ -127,15 +129,20 @@ After running the script:
 
 The script will exit with an error if:
 - Required dependencies (`jq` or `tar`) are not installed
+- The input parameter does not exist
 - The input parameter is not a valid directory or tar.gz file
 - The target directory is the script's own directory
 - `MANIFEST.json` is not found in the target location
-- The tar.gz file cannot be extracted or contains no directories
+- The tar.gz file cannot be extracted
 
 ## Notes
 
 - The script uses `set -e` to exit immediately on any error
 - All file operations are performed in the target directory
-- When extracting tar.gz files, the extraction directory is created next to the archive file
+- When extracting tar.gz files:
+  - The extraction directory is created next to the archive file
+  - The directory name is the tar.gz filename without the `.tar.gz` extension
+  - The `MANIFEST.json` file will be directly in the extracted directory (no subdirectory searching)
 - The script preserves the original tar.gz file (does not delete it)
+- The generated `galaxy.yml` includes helpful comments explaining each field
 
