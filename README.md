@@ -2,6 +2,8 @@
 
 A collection of utility scripts for working with Ansible Core / Automation Platform (AAP) and Ansible Galaxy collections.
 
+**Repository**: [https://github.com/lennysh/ansible-random](https://github.com/lennysh/ansible-random)
+
 ## Scripts
 
 ### [reconstruct_collection](./reconstruct_collection/)
@@ -37,5 +39,7 @@ Each script should:
 
 ## License
 
-[Add your license information here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Lenny Shirley
 

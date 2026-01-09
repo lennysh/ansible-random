@@ -6,6 +6,8 @@
 #              MANIFEST.json found in an unpacked collection tarball.
 #              It then removes the old build artifacts (MANIFEST.json, FILES.json)
 #              to prepare the directory for a clean rebuild.
+# Author: Lenny Shirley
+# Repository: https://github.com/lennysh/ansible-random
 # Dependencies: jq, tar
 # Usage: ./reconstruct_collection.sh <target_folder_or_tar.gz>
 # ==============================================================================

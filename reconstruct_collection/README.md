@@ -2,6 +2,9 @@
 
 Reconstructs an Ansible `galaxy.yml` file from an existing `MANIFEST.json` found in an unpacked collection tarball. This script essentially performs the reverse operation of `ansible-galaxy collection build`.
 
+**Author**: Lenny Shirley  
+**Repository**: [https://github.com/lennysh/ansible-random](https://github.com/lennysh/ansible-random)
+
 ## Overview
 
 When you have a built Ansible collection (either as a `.tar.gz` file or an unpacked directory), this script will:
